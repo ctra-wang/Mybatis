@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- configuration 核心配置文件-->
+<configuration>
+    <!--优先级最高-->
+<!--    引入外部配置文件-->
+    <properties resource="db.properties">
+    </properties>
+
+    <settings>
+<!--        标准日志工厂实现-->
+                <setting name="logImpl" value="STDOUT_LOGGING"/>
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+    </settings>
+
+
+    <typeAliases>
+        <package name="com.ctra.pojo"/>
+    </typeAliases>
+
+
+
+    <environments default="development">
+        <environment id="development">
+            <!-- 事务管理-->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--    每一个Mapper.XML都需要在Mybatis核心配置文件中注册！-->
+    <mappers>
+<!--        在 mapper 标签中，xml要从resource 读取时要用class-->
+        <mapper class="com.ctra.dao.StudentMapper"/>
+        <mapper class="com.ctra.dao.TeacherMapper"/>
+<!--        <mapper resource="com/ctra/dao/*Mapper.xml"></mapper>-->
+<!--        注意：sql使用注解要用class  sql使用xml要用resource-->
+<!--        <mapper resource="com/ctra/dao/"></mapper>-->
+<!--        <mapper resource="com/ctra/dao/TeacherMapper.xml"></mapper>-->
+    </mappers>
+
+</configuration>
