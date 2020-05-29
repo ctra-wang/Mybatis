@@ -19,7 +19,6 @@
         <module>mybatis-01</module>
         <module>mybatis-03</module>
         <module>mybatis-04</module>
-        <module>swaggerdmeo</module>
         <module>mybatis-05</module>
         <module>mybatis-06-one2many</module>
         <module>mybatis-07-many2one</module>
@@ -27,7 +26,6 @@
         <module>annotation</module>
         <module>reflection</module>
         <module>mubatis-06</module>
-        <module>mubatis-08</module>
         <module>mybatis-08</module>
         <module>mybatis-09</module>
     </modules>
